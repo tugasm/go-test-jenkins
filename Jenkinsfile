@@ -7,6 +7,10 @@ pipeline {
         imageTag = "latest"
     }
 
+    tools {
+        docker 'docker-tool'
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -18,13 +22,9 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'tugasm-dockerhub') {
-              
-                        def customImage = docker.build("${registry}/${imageName}:${imageTag}")
-
-                        customImage.push()
+                        docker.build("${registry}/${imageName}:${imageTag}").push()
                     }
                 }
             }
-        }
     }
 }
