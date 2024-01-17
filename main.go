@@ -13,6 +13,7 @@ func main() {
 	http.ListenAndServe(":8080", nil)
 }
 
+// https://github.com/tugasm/go-test-jenkins
 // Sample commands:
 // Install the latest Weekly version: brew install jenkins
 // Start the Jenkins service: brew services start jenkins --> start
