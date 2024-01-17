@@ -17,7 +17,7 @@ pipeline {
         stage('Build and Push Docker Image') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', '1cf785e3-b19b-45a6-890e-b178c3f57ea6') {
+                    docker.withRegistry('https://registry.hub.docker.com', 'tugasm-dockerhub') {
               
                         def customImage = docker.build("${registry}/${imageName}:${imageTag}")
 
