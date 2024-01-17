@@ -7,10 +7,6 @@ pipeline {
         imageTag = "latest"
     }
 
-    tools {
-        docker 'docker-tool'
-    }
-
     stages {
         stage('Checkout') {
             steps {
